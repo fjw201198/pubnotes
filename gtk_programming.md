@@ -25,5 +25,14 @@
 	 
 如果使用 `gcc -o helloworld helloworld.c $(pkg-config gtk+-3.0 --cflags --libs)` 编译，则直接双击运行时会伴随着出现一个黑乎乎的WINDOWS命令行窗口，很难看。  
 去掉这个黑乎乎的窗口的方法就是在编译选项上加上 `-mwindows`，如下所示：  
-	`gcc -o helloworld -mwindows helloworld.c $(pkg-confg gtk+-3.0 --cflags --libs)`
+	`gcc -o helloworld -mwindows helloworld.c $(pkg-confg gtk+-3.0 --cflags --libs)`  
+	
+###2. gtk+ 面向对象部分  
+1. `G_DECLARE_FINAL_TYPE`宏：  
+该宏用于生成一个不被继承的类，该宏所做的事情有：  
+   a.声明 `_get_type()`函数，该函数返回`GType`类型;  
+   b.生成`typedef struct _XXXX XXXX;`, 该结构体将会在`.c`文件中定义(在`G_DEFINE_TYPE()`之前);  
+   c.生成该类型的强制类型转;  
+   d.定义类类型;  
+   e.添加`g_autoptr()`支持，依赖于基类类型;  
 	
