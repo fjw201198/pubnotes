@@ -6,3 +6,6 @@
 2. gdb_debug.md 存放的是gdb的一些调试技巧  
 
 3. x86asm.md 是在学习LINUX内核时的用到一些x86汇编的问题  
+
+4. fedora_init.md FEDORA安装之后的配置  
+
